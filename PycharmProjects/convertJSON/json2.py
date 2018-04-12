@@ -50,7 +50,7 @@ for index, row in final.iterrows():
         p.append('cvss(' + "'" + row['id'] + "'" + ',' + row['access'] + ').')
         p.append('vulProperty(' + "'" + row['id'] + "'" + ',' + row['rng'][1:len(row['rng']) - 1] + ',' + 'privEscalation' + ').')
 
-        p.append('networkServiceInfo(' + "'" + row['ip'] + "'" + ',' +"'"+ row['soft'] +"'"+ ',' + row['protocol'] + ',' + "'" + str( row['port']) + "'" + ',' + 'someuser' + ').')
+        p.append('networkServiceInfo(' + "'" + row['ip'] + "'" + ',' +"'"+ row['soft'].strip('.') +"'"+ ',' + row['protocol'] + ',' + "'" + str( row['port']) + "'" + ',' + 'someuser' + ').')
         p.append('vulExists(' +"'" + row['ip']+"'"  + ',' +"'" + row['id']+"'"  + ',' +"'"+ row['soft'].strip('.') +"'"+ ').')
 for i in range(len(hosts)):
     victem="'"+hosts[i]+"_victem'"
